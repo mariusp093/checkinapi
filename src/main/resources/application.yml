@@ -1,10 +1,10 @@
 application:
-  name: org.shop.service
+  name: org.checkinlist.service
 
 environment:
   name: dev
 server:
-  port: 8011 # Choose a unique port for each service
+  port: 8011
   compression:
     enabled: true
     mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/octet-stream,multipart/form-data
@@ -18,7 +18,7 @@ spring:
     serialization:
       write_dates_as_timestamps: false
 
-spring.datasource.url: jdbc:postgresql://54.93.65.5:5432/tania
+spring.datasource.url: jdbc:postgresql://54.93.65.5:5432/mariuspt
 spring.datasource.username: fasttrackit_dev
 spring.datasource.password: fasttrackit_dev
 
@@ -27,7 +27,7 @@ spring.datasource.password: fasttrackit_dev
 spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # Hibernate ddl auto (create, create-drop, validate, update)
-spring.jpa.hibernate.ddl-auto: validate
+spring.jpa.hibernate.ddl-auto: update
 
 params:
   page:

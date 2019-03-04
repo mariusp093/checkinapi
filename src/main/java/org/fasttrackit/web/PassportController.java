@@ -18,30 +18,30 @@ public class PassportController {
     @Autowired
     private PassportService passportService;
 
-    @RequestMapping(path = "/agenda/{agendaId}/contact", method = RequestMethod.GET)
+    @RequestMapping(path = "/check-in-list/{checkinListId}/passport", method = RequestMethod.GET)
     @ResponseBody
-    public List<PassportDTO> getContactsByAgendaId(@PathVariable long agendaId) {
+    public List<PassportDTO> getPassportsByCheckinLists(@PathVariable long checkinListId) {
 
-        return service.getAgenda(agendaId).getContacte();
+        return service.getCheckinList(checkinListId).getPassports();
     }
 
 
     @CrossOrigin
-    @RequestMapping(path = "/agenda/{agendaId}/contact/{contactId}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/check-in-list/{checkinListId}/passport/{passportId}", method = RequestMethod.PUT)
     @ResponseBody
-    public PassportDTO editContact(@PathVariable long agendaId, @PathVariable long contactId,
+    public PassportDTO editPassport(@PathVariable long checkinListId, @PathVariable long passportId,
                                    @RequestBody PassportDTO request) {
-        request.setId(contactId);
+        request.setId(passportId);
         passportService.update(request);
         return request;
     }
 
-    @RequestMapping(path = "/agenda/{agendaId}/contact", method = RequestMethod.POST)
+    @RequestMapping(path = "/check-in-list/{checkinListId}/passport", method = RequestMethod.POST)
     @ResponseBody
-    public PassportDTO saveContact(@PathVariable long agendaId,
+    public PassportDTO savePassport(@PathVariable long checkinListId,
                                    @RequestBody PassportDTO request) {
 
-        passportService.create(request, agendaId);
+        passportService.create(request, checkinListId);
         return request;
     }
 

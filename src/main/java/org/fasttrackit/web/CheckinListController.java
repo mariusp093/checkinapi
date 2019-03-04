@@ -15,16 +15,16 @@ public class CheckinListController {
     @Autowired
     private CheckinListService service;
 
-    @RequestMapping(path = "/agenda/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/check-in-list/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public CheckinListDTO getAgendaById(@PathVariable long id) {
-        return service.getAgenda(id);
+    public CheckinListDTO getCheckinListById(@PathVariable long id) {
+        return service.getCheckinList(id);
     }
 
-    @RequestMapping(path = "/agenda", method = RequestMethod.GET)
+    @RequestMapping(path = "/check-in-list", method = RequestMethod.GET)
     @ResponseBody
-    public List<CheckinListDTO> getAgendas() {
-        return service.getAllAgendas();
+    public List<CheckinListDTO> getChekinLists() {
+        return service.getallCheckinLists();
     }
 
 }

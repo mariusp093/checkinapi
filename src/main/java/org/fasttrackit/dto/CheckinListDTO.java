@@ -9,7 +9,7 @@ public class CheckinListDTO {
     
     private String name;
 
-    private List<PassportDTO> contacte = new ArrayList<>();
+    private List<PassportDTO> passports = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -27,12 +27,12 @@ public class CheckinListDTO {
         this.name = name;
     }
 
-    public List<PassportDTO> getContacte() {
-        return contacte;
+    public List<PassportDTO> getPassports() {
+        return passports;
     }
 
-    public void setContacte(List<PassportDTO> contacte) {
-        this.contacte = contacte;
+    public void setPassports(List<PassportDTO> passports) {
+        this.passports = passports;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class CheckinListDTO {
         final StringBuilder sb = new StringBuilder("CheckinListDTO{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
-        sb.append(", contacte=").append(contacte);
+        sb.append(", passports=").append(passports);
         sb.append('}');
         return sb.toString();
     }

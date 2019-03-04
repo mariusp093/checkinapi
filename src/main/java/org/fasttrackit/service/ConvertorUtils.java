@@ -15,22 +15,22 @@ public class ConvertorUtils {
         CheckinListDTO dto = new CheckinListDTO();
         dto.setId(one.getId());
         dto.setName(one.getName());
-        List<PassportDTO> contacteDto = new ArrayList<>();
-        for (Passport c : one.getContacte()) {
-            PassportDTO cd = convertToDto(c);
-            contacteDto.add(cd);
+        List<PassportDTO> passportDTOS = new ArrayList<>();
+        for (Passport passport : one.getPassports()) {
+            PassportDTO passportDTO = convertToDto(passport);
+            passportDTOS.add(passportDTO);
         }
 
-        dto.setContacte(contacteDto);
+        dto.setPassports(passportDTOS);
         return dto;
     }
 
-    public static PassportDTO convertToDto(Passport c) {
-        PassportDTO cd = new PassportDTO();
-        cd.setFirstName(c.getFirstName());
-        cd.setLastName(c.getLastName());
-        cd.setPhone(c.getPhone());
-        cd.setId(c.getId());
-        return cd;
+    public static PassportDTO convertToDto(Passport passport) {
+        PassportDTO passportDTO = new PassportDTO();
+        passportDTO.setFirstName(passport.getFirstName());
+        passportDTO.setLastName(passport.getLastName());
+        passportDTO.setPassportnumber(passport.getPassportnumber());
+        passportDTO.setId(passport.getId());
+        return passportDTO;
     }
 }

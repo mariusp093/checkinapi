@@ -15,10 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author ttritean
- * @since 1/8/2019
- */
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CheckinlistApplication.class,
@@ -36,11 +33,11 @@ public class CheckinListRepoTest {
     @Test
     public void testSave() {
 
-        CheckinList checkinList = getAgenda("agenda0","firtsname", "ln","0000");
+        CheckinList checkinList = getCheckinList("checkinList0","firtsname", "ln","0000");
         repository.save(checkinList);
 
 
-        CheckinList checkinList2 = getAgenda("agenda1","Ala", "bala","11111");
+        CheckinList checkinList2 = getCheckinList("checkinList1","Ala", "bala","11111");
         repository.save(checkinList2);
 
 
@@ -49,26 +46,20 @@ public class CheckinListRepoTest {
     }
 
 
-    @Test
-    public void testGetAll() {
-
-        System.out.println(service.getAllAgendas());
 
 
-
-    }
 
     @Test
     public void testFindByName() {
 
-        List<CheckinList> checkinList1List = repository.findAgendaByName("agenda1");
+        List<CheckinList> checkinList1List = repository.findByName("checkinList1");
         System.out.println(checkinList1List.size());
 
         System.out.println("-----------------------REZULTAT TEST");
         System.out.println(checkinList1List.get(0));
 
 
-        List<CheckinList> checkinListLikeList = repository.findAgendaWhereNameLike("agenda");
+        List<CheckinList> checkinListLikeList = repository.findCheckinListWhereNameLike("agenda");
         System.out.println(checkinListLikeList.size());
 
         System.out.println("-----------------------REZULTAT TEST LIKE");
@@ -81,16 +72,16 @@ public class CheckinListRepoTest {
 
 
 
-    private CheckinList getAgenda(String agendaName, String firtsname, String ln, String phone) {
+    private CheckinList getCheckinList(String checkinListName, String firtsname, String lastName, String passportNumber) {
         CheckinList checkinList = new CheckinList();
-        checkinList.setName(agendaName);
-        List<Passport> contacte = new ArrayList<>();
-        Passport c = new Passport();
-        c.setFirstName(firtsname);
-        c.setLastName(ln);
-        c.setPhone(phone);
-        contacte.add(c);
-        checkinList.setContacte(contacte);
+        checkinList.setName(checkinListName);
+        List<Passport> passports = new ArrayList<>();
+        Passport passport = new Passport();
+        passport.setFirstName(firtsname);
+        passport.setLastName(lastName);
+        passport.setPassportnumber(passportNumber);
+        passports.add(passport);
+        checkinList.setPassports(passports);
         return checkinList;
     }
 

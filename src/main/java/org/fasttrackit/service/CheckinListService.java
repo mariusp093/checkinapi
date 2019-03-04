@@ -24,7 +24,7 @@ public class CheckinListService {
     private CheckinListRepository checkinListRepository;
 
     @Transactional
-    public List<CheckinListDTO> getAllAgendas() {
+    public List<CheckinListDTO> getallCheckinLists() {
         List<CheckinListDTO> result = new ArrayList<>();
         Iterator<CheckinList> iterator = checkinListRepository.findAll().iterator();
         while (iterator.hasNext()) {
@@ -34,19 +34,11 @@ public class CheckinListService {
         return result;
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**");
-            }
-        };
-    }
+
 
 
     @Transactional
-    public CheckinListDTO getAgenda(long id) {
+    public CheckinListDTO getCheckinList(long id) {
         CheckinList one = checkinListRepository.findOne(id);
         if (one == null) {
             throw new IllegalArgumentException("Invalid id");

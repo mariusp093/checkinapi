@@ -15,7 +15,7 @@ public class CheckinList {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "agenda_id")
-    private List<Passport> contacte = new ArrayList<>();
+    private List<Passport> passports = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -33,12 +33,12 @@ public class CheckinList {
         this.name = name;
     }
 
-    public List<Passport> getContacte() {
-        return contacte;
+    public List<Passport> getPassports() {
+        return passports;
     }
 
-    public void setContacte(List<Passport> contacte) {
-        this.contacte = contacte;
+    public void setPassports(List<Passport> passports) {
+        this.passports = passports;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class CheckinList {
         final StringBuilder sb = new StringBuilder("CheckinList{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
-       // sb.append(", contacte=").append(contacte);
+       // sb.append(", passports=").append(passports);
         sb.append('}');
         return sb.toString();
     }

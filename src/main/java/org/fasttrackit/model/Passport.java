@@ -12,7 +12,7 @@ public class Passport {
     private long id;
     private String firstName;
     private String lastName;
-    private String phone;
+    private String passportnumber;
 
     public String getFirstName() {
         return firstName;
@@ -30,12 +30,12 @@ public class Passport {
         this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPassportnumber() {
+        return passportnumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPassportnumber(String passportnumber) {
+        this.passportnumber = passportnumber;
     }
 
     public long getId() {
