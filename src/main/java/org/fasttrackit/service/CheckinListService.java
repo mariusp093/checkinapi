@@ -1,8 +1,8 @@
 package org.fasttrackit.service;
 
-import org.fasttrackit.dto.AgendaDTO;
-import org.fasttrackit.model.Agenda;
-import org.fasttrackit.repo.AgendaRepository;
+import org.fasttrackit.dto.CheckinListDTO;
+import org.fasttrackit.model.CheckinList;
+import org.fasttrackit.repo.CheckinListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -18,17 +18,17 @@ import java.util.List;
 
 
 @Service
-public class AgendaService {
+public class CheckinListService {
 
     @Autowired
-    private AgendaRepository agendaRepository;
+    private CheckinListRepository checkinListRepository;
 
     @Transactional
-    public List<AgendaDTO> getAllAgendas() {
-        List<AgendaDTO> result = new ArrayList<>();
-        Iterator<Agenda> iterator = agendaRepository.findAll().iterator();
+    public List<CheckinListDTO> getAllAgendas() {
+        List<CheckinListDTO> result = new ArrayList<>();
+        Iterator<CheckinList> iterator = checkinListRepository.findAll().iterator();
         while (iterator.hasNext()) {
-            Agenda next = iterator.next();
+            CheckinList next = iterator.next();
             result.add(ConvertorUtils.convertToDto(next));
         }
         return result;
@@ -46,12 +46,12 @@ public class AgendaService {
 
 
     @Transactional
-    public AgendaDTO getAgenda(long id) {
-        Agenda one = agendaRepository.findOne(id);
+    public CheckinListDTO getAgenda(long id) {
+        CheckinList one = checkinListRepository.findOne(id);
         if (one == null) {
             throw new IllegalArgumentException("Invalid id");
         }
-        AgendaDTO dto = ConvertorUtils.convertToDto(one);
+        CheckinListDTO dto = ConvertorUtils.convertToDto(one);
         return dto;
     }
 

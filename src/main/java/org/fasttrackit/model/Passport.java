@@ -1,6 +1,14 @@
-package org.fasttrackit.dto;
+package org.fasttrackit.model;
 
-public class ContactDTO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Entity
+public class Passport {
+    @Id
+    @GeneratedValue
     private long id;
     private String firstName;
     private String lastName;

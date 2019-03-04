@@ -6,7 +6,7 @@ import java.util.List;
 
 
 @Entity
-public class Agenda {
+public class CheckinList {
     @Id
     @GeneratedValue
     private Long id;
@@ -15,7 +15,7 @@ public class Agenda {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "agenda_id")
-    private List<Contact> contacte = new ArrayList<>();
+    private List<Passport> contacte = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -33,17 +33,17 @@ public class Agenda {
         this.name = name;
     }
 
-    public List<Contact> getContacte() {
+    public List<Passport> getContacte() {
         return contacte;
     }
 
-    public void setContacte(List<Contact> contacte) {
+    public void setContacte(List<Passport> contacte) {
         this.contacte = contacte;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Agenda{");
+        final StringBuilder sb = new StringBuilder("CheckinList{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
        // sb.append(", contacte=").append(contacte);

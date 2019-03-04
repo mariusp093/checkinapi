@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.fasttrackit</groupId>
-    <artifactId>agenda-service</artifactId>
+    <artifactId>checkinList-service</artifactId>
     <version>1.0-SNAPSHOT</version> <!-- Not relevant actually, version numbers overidden in CD pipeline jobs -->
     <packaging>jar</packaging>
-    <name>Agenda telefonica Service</name>
+    <name>Check In List Service</name>
 
 
     <repositories>

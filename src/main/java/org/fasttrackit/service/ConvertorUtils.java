@@ -1,9 +1,9 @@
 package org.fasttrackit.service;
 
-import org.fasttrackit.dto.AgendaDTO;
-import org.fasttrackit.dto.ContactDTO;
-import org.fasttrackit.model.Agenda;
-import org.fasttrackit.model.Contact;
+import org.fasttrackit.dto.CheckinListDTO;
+import org.fasttrackit.dto.PassportDTO;
+import org.fasttrackit.model.CheckinList;
+import org.fasttrackit.model.Passport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +11,13 @@ import java.util.List;
 
 public class ConvertorUtils {
 
-    public static AgendaDTO convertToDto(Agenda one) {
-        AgendaDTO dto = new AgendaDTO();
+    public static CheckinListDTO convertToDto(CheckinList one) {
+        CheckinListDTO dto = new CheckinListDTO();
         dto.setId(one.getId());
         dto.setName(one.getName());
-        List<ContactDTO> contacteDto = new ArrayList<>();
-        for (Contact c : one.getContacte()) {
-            ContactDTO cd = convertToDto(c);
+        List<PassportDTO> contacteDto = new ArrayList<>();
+        for (Passport c : one.getContacte()) {
+            PassportDTO cd = convertToDto(c);
             contacteDto.add(cd);
         }
 
@@ -25,8 +25,8 @@ public class ConvertorUtils {
         return dto;
     }
 
-    public static ContactDTO convertToDto(Contact c) {
-        ContactDTO cd = new ContactDTO();
+    public static PassportDTO convertToDto(Passport c) {
+        PassportDTO cd = new PassportDTO();
         cd.setFirstName(c.getFirstName());
         cd.setLastName(c.getLastName());
         cd.setPhone(c.getPhone());

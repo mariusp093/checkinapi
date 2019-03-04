@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AgendaDTO {
+public class CheckinListDTO {
     private Long id;
     
     private String name;
 
-    private List<ContactDTO> contacte = new ArrayList<>();
+    private List<PassportDTO> contacte = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -27,17 +27,17 @@ public class AgendaDTO {
         this.name = name;
     }
 
-    public List<ContactDTO> getContacte() {
+    public List<PassportDTO> getContacte() {
         return contacte;
     }
 
-    public void setContacte(List<ContactDTO> contacte) {
+    public void setContacte(List<PassportDTO> contacte) {
         this.contacte = contacte;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("AgendaDTO{");
+        final StringBuilder sb = new StringBuilder("CheckinListDTO{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", contacte=").append(contacte);

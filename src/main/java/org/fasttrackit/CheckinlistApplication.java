@@ -9,10 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 
 @SpringBootApplication
-public class AgendaApplication {
+public class CheckinlistApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AgendaApplication.class, args);
+        SpringApplication.run(CheckinlistApplication.class, args);
 
     }
 
