@@ -29,7 +29,7 @@ public class ConvertorUtils {
         PassportDTO passportDTO = new PassportDTO();
         passportDTO.setFirstName(passport.getFirstName());
         passportDTO.setLastName(passport.getLastName());
-        passportDTO.setPassportnumber(passport.getPassportnumber());
+        passportDTO.setPassportNumber(passport.getPassportnumber());
         passportDTO.setId(passport.getId());
         return passportDTO;
     }

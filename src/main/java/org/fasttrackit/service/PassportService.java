@@ -20,29 +20,34 @@ public class PassportService {
     private PassportRepository passportRepository;
 
     @Transactional
-    public void update(PassportDTO contact) {
-        Passport one = passportRepository.findOne(contact.getId());
+    public void update(PassportDTO passportDTO) {
+        Passport one = passportRepository.findOne(passportDTO.getId());
         if (one == null) {
             throw new IllegalArgumentException("Invalid id");
 
         }
-        one.setPassportnumber(contact.getPassportnumber());
-        one.setLastName(contact.getLastName());
-        one.setFirstName(contact.getFirstName());
+        one.setPassportnumber(passportDTO.getPassportNumber());
+        one.setLastName(passportDTO.getLastName());
+        one.setFirstName(passportDTO.getFirstName());
         passportRepository.save(one);
 
     }
 
     @Transactional
-    public void create(PassportDTO contact, long checkinListId) {
+    public void create(PassportDTO passportDTO, long checkinListId) {
 
         Passport one = new Passport();
-        one.setPassportnumber(contact.getPassportnumber());
-        one.setLastName(contact.getPassportnumber());
-        one.setFirstName(contact.getFirstName());
+        one.setPassportnumber(passportDTO.getPassportNumber());
+        one.setLastName(passportDTO.getLastName());
+        one.setFirstName(passportDTO.getFirstName());
 
         CheckinList checkinList = checkinListRepository.findOne(checkinListId);
         checkinList.getPassports().add(one);
         checkinListRepository.save(checkinList);
+    }
+
+    public void delete (long passportId){
+        passportRepository.delete(passportId);
+
     }
 }

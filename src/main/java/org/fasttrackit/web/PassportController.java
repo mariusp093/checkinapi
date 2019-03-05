@@ -45,6 +45,16 @@ public class PassportController {
         return request;
     }
 
+
+    @CrossOrigin
+    @RequestMapping(path = "/check-in-list/passport/{passportId}", method = RequestMethod.DELETE)
+
+    public void deletePassport( @PathVariable long passportId)
+                                    {
+
+        passportService.delete(passportId);
+
+    }
 }
 
 

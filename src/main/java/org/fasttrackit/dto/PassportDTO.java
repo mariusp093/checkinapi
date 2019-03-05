@@ -4,7 +4,7 @@ public class PassportDTO {
     private long id;
     private String firstName;
     private String lastName;
-    private String passportnumber;
+    private String passportNumber;
 
     public String getFirstName() {
         return firstName;
@@ -22,12 +22,12 @@ public class PassportDTO {
         this.lastName = lastName;
     }
 
-    public String getPassportnumber() {
-        return passportnumber;
+    public String getPassportNumber() {
+        return passportNumber;
     }
 
-    public void setPassportnumber(String passportnumber) {
-        this.passportnumber = passportnumber;
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
     }
 
     public long getId() {
